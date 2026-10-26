@@ -1,132 +1,75 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
-  Code2, 
-  Layout, 
-  Server, 
-  Brain, 
-  Wrench, 
-  Sparkles,
-  Layers,
-  Database,
-  Globe,
-  Cpu,
-  GitBranch,
-  Terminal
-} from 'lucide-react';
+  PythonLogo, 
+  JavaScriptLogo, 
+  SqlLogo, 
+  ReactLogo, 
+  Html5Logo, 
+  Css3Logo, 
+  NodejsLogo, 
+  FastApiLogo, 
+  RestApiLogo, 
+  NlpLogo, 
+  VaderLogo, 
+  TextBlobLogo, 
+  TransformersLogo, 
+  OpenRouterLogo, 
+  GitLogo, 
+  GithubIcon, 
+  RenderLogo, 
+  VercelLogo 
+} from './Icons';
 import { skillCategories } from '../data/portfolioData';
 import './Skills.css';
 
-// Helper icon resolver for skill categories
-const getCategoryIcon = (id) => {
-  switch (id) {
-    case 'languages':
-      return <Code2 size={20} />;
-    case 'frontend':
-      return <Layout size={20} />;
-    case 'backend':
-      return <Server size={20} />;
-    case 'ai-nlp':
-      return <Brain size={20} />;
-    case 'tools':
-      return <Wrench size={20} />;
-    default:
-      return <Sparkles size={20} />;
-  }
-};
-
-// Skill-specific micro icon resolver
-const getSkillIcon = (name) => {
-  switch (name) {
-    case 'Python':
-    case 'JavaScript':
-      return <Terminal size={14} color="#FFC52E" />;
-    case 'SQL':
-      return <Database size={14} color="#FFC52E" />;
-    case 'React':
-    case 'HTML5':
-    case 'CSS3':
-      return <Layout size={14} color="#FFC52E" />;
-    case 'Node.js':
-    case 'FastAPI':
-    case 'REST APIs':
-      return <Server size={14} color="#FFC52E" />;
-    case 'Natural Language Processing':
-    case 'Transformer Models':
-    case 'OpenRouter API':
-    case 'VADER':
-    case 'TextBlob':
-      return <Cpu size={14} color="#FFC52E" />;
-    case 'Git':
-    case 'GitHub':
-    case 'Render':
-    case 'Vercel':
-      return <GitBranch size={14} color="#FFC52E" />;
-    default:
-      return <span className="skill-dot-gold" />;
+const renderSkillIcon = (iconName) => {
+  switch (iconName) {
+    case 'python': return <PythonLogo size={26} />;
+    case 'javascript': return <JavaScriptLogo size={26} />;
+    case 'sql': return <SqlLogo size={26} />;
+    case 'react': return <ReactLogo size={26} />;
+    case 'html5': return <Html5Logo size={26} />;
+    case 'css3': return <Css3Logo size={26} />;
+    case 'nodejs': return <NodejsLogo size={26} />;
+    case 'fastapi': return <FastApiLogo size={26} />;
+    case 'restapi': return <RestApiLogo size={26} />;
+    case 'nlp': return <NlpLogo size={26} />;
+    case 'vader': return <VaderLogo size={26} />;
+    case 'textblob': return <TextBlobLogo size={26} />;
+    case 'transformers': return <TransformersLogo size={26} />;
+    case 'openrouter': return <OpenRouterLogo size={26} />;
+    case 'git': return <GitLogo size={26} />;
+    case 'github': return <GithubIcon size={24} color="#FFFFFF" />;
+    case 'render': return <RenderLogo size={26} />;
+    case 'vercel': return <VercelLogo size={24} />;
+    default: return null;
   }
 };
 
 export default function Skills() {
-  const [activeFilter, setActiveFilter] = useState('all');
-
-  const filteredCategories = activeFilter === 'all'
-    ? skillCategories
-    : skillCategories.filter(cat => cat.id === activeFilter);
-
   return (
     <section id="skills" className="skills-section">
       <div className="container">
-        {/* Section Header */}
-        <div className="section-header">
-          <div className="section-tag">
-            <span className="section-tag-dot" />
-            <span>Technical Capabilities</span>
-          </div>
-          <h2 className="section-title">
-            Skills &amp; <span className="text-gold">Technologies</span>
-          </h2>
-          <p className="section-subtitle">
-            Core stack and frameworks I use for engineering full-stack applications, intelligent pipelines, and machine learning models.
-          </p>
+        {/* Section Header with Left & Right Yellow Lines */}
+        <div className="section-title-line-header">
+          <span className="title-yellow-bar" />
+          <h2 className="title-white-text">TECHNICAL SKILLS</h2>
+          <span className="title-yellow-bar" />
         </div>
 
-        {/* Filter Navigation */}
-        <div className="skills-filter-nav">
-          <button
-            className={`skill-tab-btn ${activeFilter === 'all' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('all')}
-          >
-            <Layers size={15} />
-            <span>All Technologies</span>
-          </button>
-          {skillCategories.map(cat => (
-            <button
-              key={cat.id}
-              className={`skill-tab-btn ${activeFilter === cat.id ? 'active' : ''}`}
-              onClick={() => setActiveFilter(cat.id)}
-            >
-              {getCategoryIcon(cat.id)}
-              <span>{cat.name}</span>
-            </button>
-          ))}
-        </div>
+        {/* 5 Category Cards in a Row */}
+        <div className="skills-horizontal-grid">
+          {skillCategories.map((cat) => (
+            <div key={cat.id} className="skill-category-card">
+              <h3 className="category-title">{cat.name}</h3>
 
-        {/* Skills Grid */}
-        <div className="skills-grid">
-          {filteredCategories.map((group) => (
-            <div key={group.id} className="skill-group-card">
-              <div className="skill-group-header">
-                <div className="skill-group-icon">
-                  {getCategoryIcon(group.id)}
-                </div>
-                <h3 className="skill-group-title">{group.name}</h3>
-              </div>
-
-              <div className="skill-badges-list">
-                {group.skills.map((skill) => (
-                  <div key={skill.name} className="skill-badge">
-                    {getSkillIcon(skill.name)}
-                    <span>{skill.name}</span>
+              <div className="category-icons-row">
+                {cat.skills.map((skill) => (
+                  <div key={skill.name} className="skill-item-block">
+                    <div className="skill-icon-holder">
+                      {renderSkillIcon(skill.icon)}
+                    </div>
+                    <span className="skill-name-label">{skill.name}</span>
                   </div>
                 ))}
               </div>

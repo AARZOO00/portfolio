@@ -1,0 +1,242 @@
+/* ==========================================================================
+   EDUCATION & CONTACT ME COMBINED ROW - STYLES MATCHING REFERENCE DESIGN
+   ========================================================================== */
+
+.edu-contact-section {
+  padding: 4.5rem 0 5rem;
+  background-color: #050505;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.edu-contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* =========================================================
+   LEFT: EDUCATION
+   ========================================================= */
+.edu-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.edu-timeline-card {
+  background: #0B0B0F;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.6rem 1.4rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  transition: all var(--transition-fast);
+}
+
+.edu-timeline-card:hover {
+  border-color: rgba(255, 197, 46, 0.35);
+  background: #0E0E14;
+}
+
+.edu-timeline-badge-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 0.2rem;
+}
+
+.edu-timeline-dot {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  box-shadow: 0 0 10px var(--accent-gold);
+}
+
+.edu-cap-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  background: rgba(255, 197, 46, 0.08);
+  border: 1px solid rgba(255, 197, 46, 0.4);
+  box-shadow: 0 0 12px rgba(255, 197, 46, 0.15);
+}
+
+.edu-timeline-line {
+  width: 2px;
+  height: 100%;
+  min-height: 80px;
+  background: linear-gradient(to bottom, rgba(255, 197, 46, 0.4), transparent);
+  margin-top: 0.6rem;
+}
+
+.edu-details-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.edu-degree-name {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.35;
+}
+
+.edu-institution-name {
+  font-size: 0.84rem;
+  color: #A1A1AA;
+}
+
+.edu-period-cgpa {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #D4D4D8;
+  margin: 0.2rem 0;
+}
+
+.edu-coursework-text {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: #8E8E98;
+}
+
+/* =========================================================
+   RIGHT: CONTACT ME
+   ========================================================= */
+.contact-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+.contact-plane-doodle {
+  width: 75px;
+  height: 38px;
+  user-select: none;
+}
+
+.plane-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-main-heading {
+  font-family: var(--font-display);
+  font-size: 1.38rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 1.6rem;
+  line-height: 1.3;
+}
+
+.contact-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+}
+
+.contact-pills-list {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #0B0B0F;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 0.5rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.77rem;
+  color: #D4D4D8;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.contact-pill:hover {
+  background: #14141B;
+  border-color: rgba(255, 197, 46, 0.4);
+  color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+.btn-get-in-touch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--accent-gold);
+  color: #050505;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.65rem 1.4rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 18px rgba(255, 197, 46, 0.35);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  border: none;
+}
+
+.btn-get-in-touch:hover {
+  background-color: #FFD45E;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 197, 46, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .edu-contact-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .contact-actions-row {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 650px) {
+  .contact-actions-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-pills-list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-pill {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-get-in-touch {
+    width: 100%;
+    justify-content: center;
+  }
+}

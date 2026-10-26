@@ -141,14 +141,14 @@ academic: {
   degree: "B.Tech in Computer Science and Engineering",
   graduation: "May 2026",
   cgpa: "8.47 / 10",
-  collegePlaceholder: "Your University / College Name Here",
+  collegePlaceholder: "Maulana Azad National Urdu University",
   // ...
 }
 ```
 You can also click the pencil icon next to the institution name directly on the live website to test names interactively.
 
 ### 4. How to Connect the Contact Form to an Email Service
-The contact form currently launches your default email client (`mailto:rmishra.connect@gmail.com`) with the user's name, email, and message pre-populated so that **no messages are lost** and **no fake "Message Sent" dialogs are displayed**.
+The contact form currently launches your default email client (`mailto:aarzoo.coder@gmail.com`) with the user's name, email, and message pre-populated so that **no messages are lost** and **no fake "Message Sent" dialogs are displayed**.
 
 If you want automated background email delivery:
 1. Create a free account at [Formspree](https://formspree.io/).

@@ -7,10 +7,9 @@ const navItems = [
   { label: 'Home', href: '#hero' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
-  { label: 'What I Build', href: '#what-i-build' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Education', href: '#education' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Education', href: '#education-contact' },
+  { label: 'Contact', href: '#education-contact' }
 ];
 
 export default function Navbar() {
@@ -20,16 +19,14 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Toggle sticky shadow
       if (window.scrollY > 40) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
 
-      // Detect active section
-      const sections = navItems.map(item => item.href.substring(1));
-      const scrollPos = window.scrollY + 140;
+      const sections = ['hero', 'about', 'skills', 'projects', 'education-contact'];
+      const scrollPos = window.scrollY + 180;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
@@ -70,11 +67,12 @@ export default function Navbar() {
           <span className="logo-dot">.</span>
         </a>
 
-        {/* Desktop Links */}
+        {/* Center Desktop Navigation Menu */}
         <ul className="nav-links">
           {navItems.map((item) => {
             const sectionId = item.href.substring(1);
-            const isActive = activeSection === sectionId;
+            const isActive = activeSection === sectionId || 
+              (sectionId === 'education-contact' && (item.label === 'Education' || item.label === 'Contact') && activeSection === 'education-contact');
             return (
               <li key={item.label}>
                 <a
@@ -97,7 +95,7 @@ export default function Navbar() {
             className="nav-resume-btn"
             title="Download Aarzoo's Resume"
           >
-            <Download size={15} />
+            <Download size={14} />
             <span>Resume</span>
           </a>
 
@@ -113,21 +111,17 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
-        {navItems.map((item) => {
-          const sectionId = item.href.substring(1);
-          const isActive = activeSection === sectionId;
-          return (
-            <a
-              key={item.label}
-              href={item.href}
-              className={`mobile-nav-link ${isActive ? 'active' : ''}`}
-              onClick={(e) => handleLinkClick(e, item.href)}
-            >
-              <span>{item.label}</span>
-              <ArrowUpRight size={16} />
-            </a>
-          );
-        })}
+        {navItems.map((item) => (
+          <a
+            key={item.label}
+            href={item.href}
+            className="mobile-nav-link"
+            onClick={(e) => handleLinkClick(e, item.href)}
+          >
+            <span>{item.label}</span>
+            <ArrowUpRight size={16} />
+          </a>
+        ))}
 
         <a
           href={personalInfo.resumePath}

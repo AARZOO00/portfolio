@@ -110,7 +110,7 @@ def create_resume():
             Paragraph("<b>Expected: May 2026</b>", ParagraphStyle('RightText', parent=item_header, alignment=TA_RIGHT))
         ],
         [
-            Paragraph("<i>[College / University Name - Add Institution]</i>", item_sub),
+            Paragraph("<i>Maulana Azad National Urdu University</i>", item_sub),
             Paragraph("<b>CGPA: 8.47 / 10.0</b>", ParagraphStyle('RightSub', parent=body_style, alignment=TA_RIGHT))
         ]
     ]

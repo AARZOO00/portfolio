@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Download, Sparkles, GraduationCap, Award, Code2, Mail } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './Icons';
+import { Download, GraduationCap, Code2, Brain, MapPin, ArrowDown } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, MailIcon, TelegramIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 import './Hero.css';
 
 export default function Hero() {
-  const [imgSrc, setImgSrc] = useState('/images/aarzoo-profile.png');
+  const [imgSrc, setImgSrc] = useState('/images/aarzoo-hero-portrait.png');
 
   const handleImageError = () => {
-    // Graceful fallback to legacy cutout or original photo if needed
-    setImgSrc('/profile-cutout.png');
+    setImgSrc('/images/aarzoo-profile.png');
   };
 
   const handleScrollToProjects = (e) => {
@@ -21,183 +19,207 @@ export default function Hero() {
     }
   };
 
-  // Staggered entrance animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 22 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] }
-    }
-  };
-
   return (
     <section id="hero" className="hero-section">
-      {/* Ambient background glows */}
-      <div className="hero-glow-blob hero-glow-1" />
-      <div className="hero-glow-blob hero-glow-2" />
+      <div className="container hero-container">
+        {/* =========================================================
+            COLUMN 1: Intro Text, Role, Description, Buttons & Socials
+            ========================================================= */}
+        <div className="hero-col-intro">
+          <div className="hero-greeting">HELLO, I&apos;M</div>
+          
+          <h1 className="hero-name">
+            Aarzoo <span className="hero-cursor">|</span>
+          </h1>
 
-      <div className="container hero-grid">
-        {/* Left Column: Introduction & CTAs */}
-        <motion.div 
-          className="hero-content"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {/* Greeting Pill */}
-          <motion.div variants={itemVariants} className="hero-greeting-pill">
-            <span className="greeting-dot" />
-            <span className="greeting-text">{personalInfo.shortIntro}</span>
-          </motion.div>
+          <div className="hero-roles">
+            Software Developer <span className="role-sep">|</span> AI/ML Enthusiast <span className="role-sep">|</span> Full-Stack Developer
+          </div>
 
-          {/* Large Name */}
-          <motion.h1 variants={itemVariants} className="hero-name">
-            {personalInfo.name} <span className="hero-name-accent">.</span>
-          </motion.h1>
+          {/* Dotted Accent Pattern */}
+          <div className="hero-dots-accent" aria-hidden="true">
+            <span>••••</span>
+            <span>••••</span>
+            <span>••••</span>
+          </div>
 
-          {/* Professional Title */}
-          <motion.div variants={itemVariants} className="hero-role">
-            <span>Software Developer</span>
-            <span className="role-divider">•</span>
-            <span>AI/ML Enthusiast</span>
-            <span className="role-divider">•</span>
-            <span>Full-Stack Developer</span>
-          </motion.div>
-
-          {/* Short Bio */}
-          <motion.p variants={itemVariants} className="hero-description">
+          <p className="hero-bio">
             {personalInfo.bio}
-          </motion.p>
+          </p>
 
-          {/* 3 Information Badges */}
-          <motion.div variants={itemVariants} className="hero-badges">
-            <div className="hero-badge-item">
-              <GraduationCap size={15} />
-              <span>B.Tech CSE &apos;26</span>
-            </div>
-            <div className="hero-badge-item">
-              <Award size={15} />
-              <span>CGPA: 8.47/10</span>
-            </div>
-            <div className="hero-badge-item">
-              <Code2 size={15} />
-              <span>NLP &amp; Full-Stack</span>
-            </div>
-          </motion.div>
-
-          {/* Action Buttons */}
-          <motion.div variants={itemVariants} className="hero-cta-group">
+          {/* Dual Action Buttons */}
+          <div className="hero-actions">
             <a 
               href="#projects" 
-              className="btn btn-primary"
+              className="btn-hero-primary"
               onClick={handleScrollToProjects}
             >
+              <ArrowDown size={17} strokeWidth={2.5} />
               <span>View My Projects</span>
-              <ArrowRight size={18} />
             </a>
 
-            <a
+            <a 
               href={personalInfo.resumePath}
               download="Aarzoo_Resume.pdf"
-              className="btn btn-secondary"
+              className="btn-hero-secondary"
             >
-              <Download size={18} />
+              <Download size={17} strokeWidth={2} />
               <span>Download Resume</span>
             </a>
-          </motion.div>
+          </div>
 
-          {/* Social Links */}
-          <motion.div variants={itemVariants} className="hero-socials">
-            <span className="social-label">Connect:</span>
+          {/* 4 Circular Social Icon Buttons */}
+          <div className="hero-social-row">
             <a
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="social-icon-btn"
-              aria-label="Aarzoo's GitHub profile"
+              className="hero-social-circle"
+              aria-label="GitHub Profile"
             >
-              <GithubIcon size={20} />
+              <GithubIcon size={18} />
             </a>
+
             <a
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="social-icon-btn"
-              aria-label="Aarzoo's LinkedIn profile"
+              className="hero-social-circle"
+              aria-label="LinkedIn Profile"
             >
-              <LinkedinIcon size={20} />
+              <LinkedinIcon size={18} />
             </a>
+
             <a
               href={`mailto:${personalInfo.email}`}
-              className="social-icon-btn"
+              className="hero-social-circle"
               aria-label="Email Aarzoo"
             >
-              <Mail size={20} />
+              <MailIcon size={18} />
             </a>
-          </motion.div>
-        </motion.div>
 
-        {/* Right Column: Portrait Cutout in front of Glowing Golden Halo */}
-        <motion.div 
-          className="hero-visual-wrapper"
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-        >
-          {/* Glowing Golden Circular Halo behind body */}
-          <div className="hero-halo-glow" />
+            <a
+              href={personalInfo.telegram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-social-circle"
+              aria-label="Telegram / Connect"
+            >
+              <TelegramIcon size={18} />
+            </a>
+          </div>
+        </div>
 
-          {/* Animated Outer Dashed Ring */}
-          <div className="hero-orbital-ring ring-outer" />
+        {/* =========================================================
+            COLUMN 2: Solid Glowing Golden Sun + Aarzoo Cutout Portrait + Doodles
+            ========================================================= */}
+        <div className="hero-col-visual">
+          <div className="hero-sun-stage">
+            {/* Hand-Drawn Golden Doodles */}
+            <svg className="hero-doodle doodle-arrow-up" viewBox="0 0 60 60" fill="none" stroke="#FFC52E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* Arrow pointing up right with feathers */}
+              <path d="M12 48 L48 12 M28 12 L48 12 L48 32" />
+              <path d="M18 52 L24 46" strokeWidth="2" />
+            </svg>
 
-          {/* Inner Orbital Ring with Orbiting Golden Bead */}
-          <div className="hero-orbital-ring ring-inner">
-            <div className="orbit-dot" />
+            <svg className="hero-doodle doodle-lightning" viewBox="0 0 40 60" fill="none" stroke="#FFC52E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* Lightning bolt */}
+              <path d="M22 4 L8 30 L22 30 L16 56 L34 26 L20 26 Z" />
+            </svg>
+
+            <svg className="hero-doodle doodle-sparks" viewBox="0 0 50 50" fill="none" stroke="#FFC52E" strokeWidth="2" strokeLinecap="round">
+              <path d="M10 25 L2 25 M40 25 L48 25 M25 10 L25 2 M25 40 L25 48" />
+              <path d="M14 14 L8 8 M36 36 L42 42 M14 36 L8 42 M36 14 L42 8" />
+            </svg>
+
+            <svg className="hero-doodle doodle-scribble-left" viewBox="0 0 40 40" fill="none" stroke="#FFC52E" strokeWidth="2" strokeLinecap="round">
+              <path d="M8 20 Q16 10 24 20 T40 20" />
+              <path d="M12 28 Q20 18 28 28" />
+            </svg>
+
+            {/* Glowing Golden Outer Orbital Ring */}
+            <div className="hero-sun-orbital-ring" />
+
+            {/* Solid Glowing Golden Sun Circle */}
+            <div className="hero-golden-sun" />
+
+            {/* Transparent Cutout Portrait */}
+            <div className="hero-portrait-frame">
+              <img
+                src={imgSrc}
+                onError={handleImageError}
+                alt="Aarzoo - Software Developer & AI/ML Enthusiast"
+                className="hero-portrait-cutout"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* =========================================================
+            COLUMN 3: Dashed Arching Pointer Arrow + Quick Info Card
+            ========================================================= */}
+        <div className="hero-col-quickcard">
+          {/* Curved Dashed Yellow Arrow pointing towards the card */}
+          <div className="hero-curved-arrow-wrapper" aria-hidden="true">
+            <svg viewBox="0 0 120 70" fill="none" className="hero-curved-arrow-svg">
+              <path
+                d="M 10 60 Q 60 5 110 35"
+                stroke="#FFC52E"
+                strokeWidth="2.2"
+                strokeDasharray="5 5"
+                fill="none"
+              />
+              <polygon
+                points="110,35 98,28 102,40"
+                fill="#FFC52E"
+              />
+            </svg>
           </div>
 
-          {/* Floating Golden Sparkles */}
-          <div className="hero-sparkle sparkle-1" />
-          <div className="hero-sparkle sparkle-2" />
-          <div className="hero-sparkle sparkle-3" />
-          <div className="hero-sparkle sparkle-4" />
+          {/* Quick Info Card */}
+          <div className="hero-quick-card">
+            {/* Item 1: B.Tech CSE */}
+            <div className="quick-item">
+              <div className="quick-icon-circle">
+                <GraduationCap size={18} color="#FFC52E" />
+              </div>
+              <div className="quick-text">
+                <div className="quick-title">B.Tech CSE</div>
+                <div className="quick-sub">CGPA: 8.47/10</div>
+              </div>
+            </div>
 
-          {/* Top Floating Badge */}
-          <div className="floating-tag floating-tag-top">
-            <span className="floating-tag-gold-dot" />
-            <Sparkles size={14} color="#FFC52E" />
-            <span>AI/ML &amp; NLP Builder</span>
-          </div>
+            {/* Item 2: Passionate about building real-world projects */}
+            <div className="quick-item">
+              <div className="quick-icon-circle">
+                <Code2 size={18} color="#FFC52E" />
+              </div>
+              <div className="quick-text">
+                <div className="quick-desc">Passionate about building real-world projects</div>
+              </div>
+            </div>
 
-          {/* Transparent Portrait Cutout Container */}
-          <div className="hero-portrait-cutout-container">
-            <img
-              src={imgSrc}
-              onError={handleImageError}
-              alt="Aarzoo - Software Developer & AI/ML Enthusiast"
-              className="hero-portrait-cutout-img"
-              loading="eager"
-            />
-          </div>
+            {/* Item 3: Exploring AI, ML & NLP */}
+            <div className="quick-item">
+              <div className="quick-icon-circle">
+                <Brain size={18} color="#FFC52E" />
+              </div>
+              <div className="quick-text">
+                <div className="quick-desc">Exploring AI, ML &amp; NLP</div>
+              </div>
+            </div>
 
-          {/* Bottom Floating Badge */}
-          <div className="floating-tag floating-tag-bottom">
-            <span className="floating-tag-gold-dot" />
-            <Code2 size={14} color="#FFC52E" />
-            <span>React • Python • FastAPI</span>
+            {/* Item 4: India */}
+            <div className="quick-item">
+              <div className="quick-icon-circle">
+                <MapPin size={18} color="#FFC52E" />
+              </div>
+              <div className="quick-text">
+                <div className="quick-desc">India</div>
+              </div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

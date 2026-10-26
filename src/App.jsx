@@ -3,11 +3,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
-import WhatIBuild from './components/WhatIBuild';
 import Projects from './components/Projects';
-import Education from './components/Education';
-import GithubSection from './components/GithubSection';
-import Contact from './components/Contact';
+import EducationContact from './components/EducationContact';
 import Footer from './components/Footer';
 
 function App() {
@@ -18,11 +15,8 @@ function App() {
         <Hero />
         <About />
         <Skills />
-        <WhatIBuild />
         <Projects />
-        <Education />
-        <GithubSection />
-        <Contact />
+        <EducationContact />
       </main>
       <Footer />
     </div>
