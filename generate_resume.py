@@ -154,22 +154,16 @@ def create_resume():
             "• Built an end-to-end NLP application analyzing exported WhatsApp chats to extract message-level sentiment and emotional valence.<br/>• Integrated VADER and Transformer-based models for emotional trend visualization and interactive reporting."
         ),
         (
-            "AI Counsellor",
-            "React, Node.js, REST APIs, OpenRouter API",
-            "Frontend: ai-counsellor-pink.vercel.app | Backend: ai-counsellor-vosd.onrender.com",
-            "• Engineered a conversational full-stack AI guidance platform providing contextual academic and university advisory assistance.<br/>• Integrated OpenRouter LLM endpoints with responsive chat interfaces and reliable RESTful service endpoints."
+            "CareOps Platform",
+            "Next.js, React, JavaScript, REST APIs, Vercel",
+            "Demo: frontend-snowy-xi-43.vercel.app | GitHub: AARZOO00/careops-platform",
+            "• Developed a unified business operations and scheduling management platform tailored for service-based businesses.<br/>• Built interactive CRM client pipeline management, service booking flows, and deployed full-stack on Vercel."
         ),
         (
             "MH Resilience Pro – Mental Health Resilience Dashboard",
             "React.js, JavaScript, AI/ML APIs, Data Visualization, Vercel",
-            "Deployed on Vercel",
+            "Live: mental-health-resilience-system.vercel.app",
             "• Designed an interactive analytical dashboard assessing mental health resilience factors using social determinants of health.<br/>• Created comprehensive visual data insights and dynamic exploratory resilience indicators."
-        ),
-        (
-            "Real-Time Voice Translator",
-            "Python, FastAPI, SpeechRecognition, Deep Translator, gTTS",
-            "github.com/AARZOO00/real-time-voice-translator",
-            "• Implemented a voice translation pipeline featuring low-latency speech recognition, multi-language translation, and speech synthesis.<br/>• Developed a modular FastAPI backend delivering synchronized audio processing."
         )
     ]
 

@@ -7,13 +7,13 @@ export const personalInfo = {
   shortIntro: "HELLO, I'M",
   bio: "I build practical software applications and AI-powered solutions using modern web technologies and machine learning.",
   aboutText: "I'm a Computer Science graduate with a B.Tech degree and a CGPA of 8.47/10. I enjoy developing full-stack applications and exploring Artificial Intelligence, Machine Learning, and Natural Language Processing. I focus on building useful, user-friendly applications that solve real-world problems.",
-  
-  email: "rmishra.connect@gmail.com",
+
+  email: "aarzoo.coder@gmail.com",
   github: "https://github.com/AARZOO00",
   linkedin: "https://linkedin.com/in/aarzoo00/",
   resumePath: "/resume.pdf",
-  profileImage: "/profile-placeholder.jpg", // Replace with /profile.jpg if Aarzoo adds their own photo
-  
+  profileImage: "/profile.jpg",
+
   academic: {
     degree: "B.Tech in Computer Science and Engineering",
     graduation: "May 2026",
@@ -29,7 +29,7 @@ export const personalInfo = {
       "Operating Systems & Networks"
     ]
   },
-  
+
   interests: [
     "Software Development",
     "Artificial Intelligence & ML",
@@ -130,7 +130,7 @@ export const projects = [
     id: "whatsapp-sentiment",
     title: "WhatsApp Chat Sentiment Analyzer",
     subtitle: "Conversational NLP & Emotion Analytics",
-    description: "An NLP-based application that analyzes WhatsApp chat exports to identify message-level sentiment and emotions.",
+    description: "An NLP-based application for analyzing WhatsApp chat exports and identifying message-level sentiment and emotions.",
     fullDescription: "Parses exported WhatsApp conversation archives to detect emotional nuance and message-level polarity. Employs VADER and Transformer architecture models to extract behavioral metrics, emotion distributions, and visual trend patterns.",
     image: "/projects/whatsapp-sentiment.jpg",
     technologies: ["Python", "FastAPI", "React", "NLP", "VADER", "Transformer Models"],
@@ -148,23 +148,23 @@ export const projects = [
     featured: true
   },
   {
-    id: "ai-counsellor",
-    title: "AI Counsellor",
-    subtitle: "Full-Stack Advisory & Knowledge Assistant",
-    description: "A full-stack AI-powered application for guidance and university-related information.",
-    fullDescription: "Comprehensive academic advising web platform that assists prospective and current students with admissions guidance, program selection, and coursework queries using OpenRouter LLM endpoints.",
-    image: "/projects/ai-counsellor.jpg",
-    technologies: ["React", "Node.js", "REST APIs", "OpenRouter"],
+    id: "careops-platform",
+    title: "CareOps Platform",
+    subtitle: "Unified Business Operations & CRM Platform",
+    description: "A full-stack business operations platform for service booking, scheduling, and client management.",
+    fullDescription: "All-in-one operations platform for service businesses featuring integrated service booking, scheduling management, CRM client pipelines, and real-time operational analytics.",
+    image: "/projects/careops-platform.jpg",
+    technologies: ["Next.js", "React", "JavaScript", "REST APIs", "Vercel"],
     features: [
-      "Context-aware academic advisory chat agent",
-      "Integration with OpenRouter LLM models",
-      "Full-stack client and service separation",
-      "Deployed with live frontend and backend endpoints"
+      "Service booking and automated scheduling management",
+      "Interactive CRM client and pipeline tracking",
+      "Business operations workflow coordination",
+      "Production deployment optimized on Vercel"
     ],
     links: {
-      github: null,
-      live: "https://ai-counsellor-pink.vercel.app/",
-      backend: "https://ai-counsellor-vosd.onrender.com/"
+      github: "https://github.com/AARZOO00/careops-platform",
+      live: "https://frontend-snowy-xi-43.vercel.app/",
+      backend: null
     },
     featured: true
   },
@@ -178,34 +178,13 @@ export const projects = [
     technologies: ["React.js", "JavaScript", "AI/ML APIs", "Data Visualization", "Vercel"],
     features: [
       "Social determinants of health multidimensional index",
-      "Interactive data visualizations and radar metrics",
+      "Interactive data visualizations and resilience radar charts",
       "AI-assisted contextual resilience breakdown",
       "Production deployment optimized for Vercel"
     ],
     links: {
       github: null,
-      live: null, // As requested: verified links only
-      backend: null
-    },
-    featured: true
-  },
-  {
-    id: "voice-translator",
-    title: "Real-Time Voice Translator",
-    subtitle: "Speech Recognition, Translation & TTS",
-    description: "A voice translation application integrating speech recognition, translation, and text-to-speech functionality.",
-    fullDescription: "End-to-end multi-language voice translation system built with FastAPI. Captures live microphone speech, transcribes via SpeechRecognition, translates through Deep Translator, and synthesizes clear vocal output with gTTS.",
-    image: "/projects/voice-translator.jpg",
-    technologies: ["Python", "FastAPI", "SpeechRecognition", "Deep Translator", "gTTS"],
-    features: [
-      "Live microphone audio capture and speech recognition",
-      "Multi-language text translation pipeline",
-      "Natural voice synthesis (TTS) playback",
-      "Modular FastAPI backend service architecture"
-    ],
-    links: {
-      github: "https://github.com/AARZOO00/real-time-voice-translator",
-      live: null,
+      live: "https://mental-health-resilience-system.vercel.app/",
       backend: null
     },
     featured: true

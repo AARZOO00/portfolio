@@ -47,13 +47,13 @@ export default function GithubSection() {
               <span>whatsapp-sentiment-analyzer</span>
             </a>
             <a
-              href="https://github.com/AARZOO00/real-time-voice-translator"
+              href="https://github.com/AARZOO00/careops-platform"
               target="_blank"
               rel="noopener noreferrer"
               className="github-mini-card"
             >
               <GitBranch size={14} color="#FFC52E" />
-              <span>real-time-voice-translator</span>
+              <span>careops-platform</span>
             </a>
           </div>
         </div>

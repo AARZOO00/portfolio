@@ -92,7 +92,7 @@ export default function Projects() {
                       aria-label={`Live Demo for ${project.title}`}
                     >
                       <ExternalLink size={15} />
-                      <span>Live App</span>
+                      <span>Live Demo</span>
                     </a>
                   )}
 

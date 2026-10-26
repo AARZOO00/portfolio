@@ -35,11 +35,11 @@ Portfolio/
 ├── public/
 │   ├── projects/
 │   │   ├── whatsapp-sentiment.jpg   # Project 1 Preview
-│   │   ├── ai-counsellor.jpg        # Project 2 Preview
-│   │   ├── mh-resilience.jpg        # Project 3 Preview
-│   │   └── voice-translator.jpg     # Project 4 Preview
+│   │   ├── careops-platform.jpg     # Project 2 Preview
+│   │   └── mh-resilience.jpg        # Project 3 Preview
 │   ├── github-banner.jpg            # Tech-themed background banner
-│   ├── profile-placeholder.jpg      # Stylized gold-rim silhouette
+│   ├── profile.jpg                  # Aarzoo's portrait photo
+│   ├── profile-placeholder.jpg      # Stylized gold-rim silhouette fallback
 │   ├── resume.pdf                   # Real, verified resume PDF
 │   └── favicon.svg                  # Brand favicon
 ├── src/
