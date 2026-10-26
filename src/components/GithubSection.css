@@ -1,0 +1,118 @@
+/* ==========================================================================
+   GITHUB SHOWCASE SECTION STYLES
+   ========================================================================== */
+
+.github-section {
+  position: relative;
+  padding: 6.5rem 0;
+  overflow: hidden;
+  background-color: #060608;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.github-bg-image {
+  position: absolute;
+  inset: 0;
+  background-image: url('/github-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.22;
+  mix-blend-mode: luminosity;
+  pointer-events: none;
+}
+
+.github-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(5, 5, 5, 0.6) 0%, rgba(5, 5, 5, 0.95) 100%);
+  pointer-events: none;
+}
+
+.github-content-box {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(14, 14, 18, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 197, 46, 0.25);
+  border-radius: 28px;
+  padding: 3.5rem 2.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 197, 46, 0.1);
+}
+
+.github-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background: var(--accent-gold-subtle);
+  border: 1px solid var(--accent-gold-border);
+  color: var(--accent-gold);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 25px var(--accent-gold-glow);
+}
+
+.github-heading {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--text-white);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.github-desc {
+  font-size: 1.12rem;
+  line-height: 1.7;
+  color: #D1D5DB;
+  margin-bottom: 2.25rem;
+}
+
+.github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.9rem 2.25rem;
+  border-radius: 12px;
+}
+
+.github-repocards {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.github-mini-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.github-mini-card:hover {
+  border-color: var(--accent-gold-border);
+  color: var(--accent-gold);
+}
+
+@media (max-width: 768px) {
+  .github-content-box {
+    padding: 2.5rem 1.5rem;
+  }
+}

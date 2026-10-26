@@ -1,0 +1,108 @@
+/* ==========================================================================
+   WHAT I BUILD (FRESHER EXPERIENCE ALTERNATIVE) STYLES
+   ========================================================================== */
+
+.build-section {
+  padding: 6.5rem 0;
+  position: relative;
+  background-color: var(--bg-primary);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.build-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.build-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 20px;
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.build-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-gold), transparent);
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.build-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-gold-border);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 25px var(--accent-gold-glow);
+}
+
+.build-card:hover::before {
+  opacity: 1;
+}
+
+.build-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.build-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--accent-gold-subtle);
+  border: 1px solid var(--accent-gold-border);
+  color: var(--accent-gold);
+}
+
+.build-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.build-desc {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+.build-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.build-tech-pill {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--accent-gold);
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+}
+
+@media (max-width: 900px) {
+  .build-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
