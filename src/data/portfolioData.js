@@ -109,17 +109,17 @@ export const projects = [
     swapButtons: false
   },
   {
-    id: "ai-counsellor",
-    title: "AI Counsellor",
-    description: "A full-stack AI-powered application for guidance and university-related information.",
-    image: "/projects/ai-counsellor.jpg",
-    tags: ["React", "Node.js", "OpenRouter", "REST APIs"],
+    id: "careops-platform",
+    title: "CareOps Platform",
+    description: "A full-stack business operations platform designed to streamline workflows and manage business activities.",
+    image: "/projects/careops-platform.jpg",
+    tags: ["React", "Node.js", "FastAPI", "SQLAlchemy", "JWT", "Vercel"],
     links: {
-      github: "https://github.com/AARZOO00/ai-study-abroad-counsellor",
-      live: "https://ai-counsellor-pink.vercel.app/"
+      github: "https://github.com/AARZOO00/careops-platform",
+      live: "https://frontend-snowy-xi-43.vercel.app/"
     },
     primaryButton: "live",
-    swapButtons: true
+    swapButtons: false
   },
   {
     id: "mh-resilience-pro",
@@ -130,19 +130,6 @@ export const projects = [
     links: {
       github: "https://github.com/AARZOO00/mental-health-resilience-system",
       live: "https://mental-health-resilience-system.vercel.app/"
-    },
-    primaryButton: "live",
-    swapButtons: false
-  },
-  {
-    id: "voice-translator",
-    title: "Real-Time Voice Translator",
-    description: "Voice translation application with speech recognition, text translation, and audio output.",
-    image: "/projects/voice-translator.jpg",
-    tags: ["Python", "FastAPI", "SpeechRecognition"],
-    links: {
-      github: "https://github.com/AARZOO00/real-time-voice-translator",
-      live: "https://github.com/AARZOO00"
     },
     primaryButton: "live",
     swapButtons: false

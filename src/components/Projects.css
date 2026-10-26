@@ -39,11 +39,11 @@
   transform: translateY(-1px);
 }
 
-/* 4-Card Horizontal Grid */
+/* 3-Card Horizontal Grid */
 .projects-horizontal-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
 }
 
 .project-column-card {
@@ -181,7 +181,7 @@
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
   .projects-horizontal-grid {
     grid-template-columns: repeat(2, 1fr);
   }
