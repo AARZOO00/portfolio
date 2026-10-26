@@ -12,13 +12,14 @@ export const personalInfo = {
   github: "https://github.com/AARZOO00",
   linkedin: "https://linkedin.com/in/aarzoo00/",
   resumePath: "/resume.pdf",
-  profileImage: "/profile.jpg",
+  profileImage: "/images/aarzoo-profile.png",
+  portraitCutout: "/images/aarzoo-profile.png",
 
   academic: {
     degree: "B.Tech in Computer Science and Engineering",
     graduation: "May 2026",
     cgpa: "8.47 / 10",
-    collegePlaceholder: "[College / University Name - Add Institution]",
+    collegePlaceholder: "Maulana Azad National Urdu University",
     coursework: [
       "Data Structures & Algorithms",
       "Object-Oriented Programming",
@@ -142,7 +143,7 @@ export const projects = [
     ],
     links: {
       github: "https://github.com/AARZOO00/whatsapp-sentiment-analyzer",
-      live: null,
+      live: "https://whatsapp-analytics-7gpztanlhdjxmgpa6p5dgp.streamlit.app/",
       backend: null
     },
     featured: true
@@ -183,7 +184,7 @@ export const projects = [
       "Production deployment optimized for Vercel"
     ],
     links: {
-      github: null,
+      github: "https://github.com/AARZOO00/mental-health-resilience-system",
       live: "https://mental-health-resilience-system.vercel.app/",
       backend: null
     },

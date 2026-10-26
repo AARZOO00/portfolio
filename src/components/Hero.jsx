@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { ArrowRight, Download, Sparkles, GraduationCap, Award, Code2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Download, Sparkles, GraduationCap, Award, Code2, Mail } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 import './Hero.css';
 
 export default function Hero() {
-  const [imgSrc, setImgSrc] = useState('/profile.jpg');
+  const [imgSrc, setImgSrc] = useState('/images/aarzoo-profile.png');
 
   const handleImageError = () => {
-    // If user has not placed profile.jpg in public yet, seamlessly fallback to stylized placeholder
-    setImgSrc(personalInfo.profileImage);
+    // Graceful fallback to legacy cutout or original photo if needed
+    setImgSrc('/profile-cutout.png');
   };
 
   const handleScrollToProjects = (e) => {
@@ -17,6 +18,27 @@ export default function Hero() {
     const target = document.querySelector('#projects');
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Staggered entrance animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 22 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] }
     }
   };
 
@@ -28,46 +50,55 @@ export default function Hero() {
 
       <div className="container hero-grid">
         {/* Left Column: Introduction & CTAs */}
-        <div className="hero-content">
-          <div className="hero-greeting-pill">
+        <motion.div 
+          className="hero-content"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Greeting Pill */}
+          <motion.div variants={itemVariants} className="hero-greeting-pill">
             <span className="greeting-dot" />
             <span className="greeting-text">{personalInfo.shortIntro}</span>
-          </div>
+          </motion.div>
 
-          <h1 className="hero-name">
+          {/* Large Name */}
+          <motion.h1 variants={itemVariants} className="hero-name">
             {personalInfo.name} <span className="hero-name-accent">.</span>
-          </h1>
+          </motion.h1>
 
-          <div className="hero-role">
+          {/* Professional Title */}
+          <motion.div variants={itemVariants} className="hero-role">
             <span>Software Developer</span>
             <span className="role-divider">•</span>
             <span>AI/ML Enthusiast</span>
             <span className="role-divider">•</span>
             <span>Full-Stack Developer</span>
-          </div>
+          </motion.div>
 
-          <p className="hero-description">
+          {/* Short Bio */}
+          <motion.p variants={itemVariants} className="hero-description">
             {personalInfo.bio}
-          </p>
+          </motion.p>
 
-          {/* Quick Credential Badges */}
-          <div className="hero-badges">
+          {/* 3 Information Badges */}
+          <motion.div variants={itemVariants} className="hero-badges">
             <div className="hero-badge-item">
               <GraduationCap size={15} />
               <span>B.Tech CSE &apos;26</span>
             </div>
             <div className="hero-badge-item">
               <Award size={15} />
-              <span>CGPA: 8.47 / 10</span>
+              <span>CGPA: 8.47/10</span>
             </div>
             <div className="hero-badge-item">
               <Code2 size={15} />
               <span>NLP &amp; Full-Stack</span>
             </div>
-          </div>
+          </motion.div>
 
           {/* Action Buttons */}
-          <div className="hero-cta-group">
+          <motion.div variants={itemVariants} className="hero-cta-group">
             <a 
               href="#projects" 
               className="btn btn-primary"
@@ -85,10 +116,10 @@ export default function Hero() {
               <Download size={18} />
               <span>Download Resume</span>
             </a>
-          </div>
+          </motion.div>
 
-          {/* Social Profiles */}
-          <div className="hero-socials">
+          {/* Social Links */}
+          <motion.div variants={itemVariants} className="hero-socials">
             <span className="social-label">Connect:</span>
             <a
               href={personalInfo.github}
@@ -108,11 +139,40 @@ export default function Hero() {
             >
               <LinkedinIcon size={20} />
             </a>
-          </div>
-        </div>
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="social-icon-btn"
+              aria-label="Email Aarzoo"
+            >
+              <Mail size={20} />
+            </a>
+          </motion.div>
+        </motion.div>
 
-        {/* Right Column: Portrait Frame & Decorative Badges */}
-        <div className="hero-visual-wrapper">
+        {/* Right Column: Portrait Cutout in front of Glowing Golden Halo */}
+        <motion.div 
+          className="hero-visual-wrapper"
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+        >
+          {/* Glowing Golden Circular Halo behind body */}
+          <div className="hero-halo-glow" />
+
+          {/* Animated Outer Dashed Ring */}
+          <div className="hero-orbital-ring ring-outer" />
+
+          {/* Inner Orbital Ring with Orbiting Golden Bead */}
+          <div className="hero-orbital-ring ring-inner">
+            <div className="orbit-dot" />
+          </div>
+
+          {/* Floating Golden Sparkles */}
+          <div className="hero-sparkle sparkle-1" />
+          <div className="hero-sparkle sparkle-2" />
+          <div className="hero-sparkle sparkle-3" />
+          <div className="hero-sparkle sparkle-4" />
+
           {/* Top Floating Badge */}
           <div className="floating-tag floating-tag-top">
             <span className="floating-tag-gold-dot" />
@@ -120,29 +180,15 @@ export default function Hero() {
             <span>AI/ML &amp; NLP Builder</span>
           </div>
 
-          {/* Portrait Container */}
-          <div className="portrait-container">
-            <div className="portrait-inner">
-              <img
-                src={imgSrc}
-                onError={handleImageError}
-                alt="Aarzoo - Software Developer & AI/ML Enthusiast"
-                className="portrait-img"
-              />
-              <div className="portrait-overlay-glow" />
-
-              {/* Status Badge */}
-              <div className="portrait-status-badge">
-                <div className="status-badge-info">
-                  <h4>Aarzoo</h4>
-                  <p>Computer Science &apos;26</p>
-                </div>
-                <div className="status-pulse-indicator">
-                  <span className="status-pulse-dot" />
-                  <span>Open to Work</span>
-                </div>
-              </div>
-            </div>
+          {/* Transparent Portrait Cutout Container */}
+          <div className="hero-portrait-cutout-container">
+            <img
+              src={imgSrc}
+              onError={handleImageError}
+              alt="Aarzoo - Software Developer & AI/ML Enthusiast"
+              className="hero-portrait-cutout-img"
+              loading="eager"
+            />
           </div>
 
           {/* Bottom Floating Badge */}
@@ -151,7 +197,7 @@ export default function Hero() {
             <Code2 size={14} color="#FFC52E" />
             <span>React • Python • FastAPI</span>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

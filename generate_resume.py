@@ -92,7 +92,7 @@ def create_resume():
     story.append(Spacer(1, 4))
     story.append(Paragraph("Software Developer | AI/ML Enthusiast | Full-Stack Developer", subtitle_style))
     story.append(Spacer(1, 4))
-    story.append(Paragraph("Email: rmishra.connect@gmail.com &nbsp;|&nbsp; LinkedIn: linkedin.com/in/aarzoo00 &nbsp;|&nbsp; GitHub: github.com/AARZOO00", contact_style))
+    story.append(Paragraph("Email: aarzoo.coder@gmail.com &nbsp;|&nbsp; LinkedIn: linkedin.com/in/aarzoo00 &nbsp;|&nbsp; GitHub: github.com/AARZOO00", contact_style))
     story.append(Spacer(1, 8))
     story.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor('#F59E0B'), spaceBefore=2, spaceAfter=10))
 

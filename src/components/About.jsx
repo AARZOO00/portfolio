@@ -4,7 +4,7 @@ import { personalInfo } from '../data/portfolioData';
 import './About.css';
 
 export default function About() {
-  const [avatarSrc, setAvatarSrc] = useState('/profile.jpg');
+  const [avatarSrc, setAvatarSrc] = useState(personalInfo.portraitCutout || '/images/aarzoo-profile.png');
 
   return (
     <section id="about" className="about-section">
